@@ -1,0 +1,20 @@
+{
+  "name": "6a68-testingisfun",
+  "version": "0.0.1",
+  "description": "mozilla test idp party ftwz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/6a68/testingisfun"
+  },
+  "author": "jared hirsch <ohai@6a68.net>",
+  "license": "BSD",
+  "dependencies": {
+    "connect": "~2.7.7",
+    "awsbox": "~0.4.4",
+    "express": "~3.2.1"
+  }
+}
