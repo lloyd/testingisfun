@@ -1,20 +1,13 @@
 var express = require('express'),
-  fs = require('fs'),
-  https = require('https');
+  fs = require('fs');
 
-var options = {
-  key: fs.readFileSync('./ssl/privatekey.pem'),
-  cert: fs.readFileSync('./ssl/cert.pem')
-};
+var port = process.env['PORT'] || 10000;
 
-// SSL port by default
-var port = process.env['PORT'] || 443;
 var app = express();
-var server = https.createServer(options, app).listen(port, function() {
-  console.log('testingisfun! server listening on port ' + port);
-});
 
-app.get('/', function(req, res) {
+app.get('/.well-known/browserid', function(req, res) {
   res.type('application/json');
   res.send(200, '{"authority": "login.allizom.org"}');
 });
+
+app.listen(port, "127.0.0.1");
